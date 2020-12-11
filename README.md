@@ -51,7 +51,7 @@ import {VieraKeys, Viera} from 'node-panasonic-viera';
 const viera = new Viera();
 
 // CONNECT
-virea.connect('192.168.178.140', 'JkasiKDjwuKasW==', 'J19DKDfju283jKFzlaO9za==')
+viera.connect('192.168.178.140', 'JkasiKDjwuKasW==', 'J19DKDfju283jKFzlaO9za==')
   // 1. power on TV
   .then(() => {
     return viera.sendKey(VieraKeys.power);
@@ -70,7 +70,7 @@ virea.connect('192.168.178.140', 'JkasiKDjwuKasW==', 'J19DKDfju283jKFzlaO9za==')
   })
   // catch errors
   .catch((error) => {
-    console.log('ERROR: ' + error);
+    console.log(error);
   });
 ```
 
