@@ -250,8 +250,6 @@ class VieraPrivate {
      */
   _soap_request(url, urn, action, parameters, body_element) {
     return new Promise((resolve, reject) => {
-      console.log(action);
-
       if (typeof (body_element) === 'undefined') {
         body_element = 'u';
       }
