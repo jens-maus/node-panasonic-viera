@@ -6,7 +6,6 @@
 [![Downloads](https://img.shields.io/npm/dm/node-panasonic-viera.svg)](https://www.npmjs.com/package/node-panasonic-viera)
 [![License](https://img.shields.io/github/license/jens-maus/node-panasonic-viera.svg)](https://github.com/jens-maus/node-panasonic-viera/blob/master/LICENSE)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RAQSDY9YNZVCL)
-[![Known Vulnerabilities](https://snyk.io/test/github/jens-maus/node-panasonic-viera/badge.svg)](https://snyk.io/test/github/jens-maus/node-panasonic-viera)
 [![GitHub stars](https://img.shields.io/github/stars/jens-maus/node-panasonic-viera.svg?style=social&label=Star)](https://github.com/jens-maus/node-panasonic-viera/stargazers/)
 
 [![NPM](https://nodei.co/npm/node-panasonic-viera.png?downloads=true)](https://nodei.co/npm/node-panasonic-viera/)
