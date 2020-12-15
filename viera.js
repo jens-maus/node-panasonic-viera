@@ -12,6 +12,7 @@
 //   https://github.com/g30r93g/viera.js
 //   https://github.com/AntonioMeireles/homebridge-vieramatic
 //   https://github.com/mhop/fhem-mirror/blob/master/fhem/FHEM/70_VIERA.pm
+//   https://github.com/ErwanAliasr1/hc2-addons/blob/master/multimedia/TV/Panasonic-Viera.lua
 //
 // Copyright (c) 2020-2021 Jens Maus <mail@jens-maus.de>
 //
@@ -554,12 +555,22 @@ const VieraKeys = {
   swap: 'NRC_SWAP-ONOFF',
   text: 'NRC_TEXT-ONOFF',
   tv: 'NRC_TV-ONOFF',
+  tv_mute_on: 'NRC_TV_MUTE_ON-ONOFF',
+  tv_mute_off: 'NRC_TV_MUTE_OFF-ONOFF',
+  dms_ch_up: 'NRC_DMS_CH_UP-ONOFF',
+  dms_ch_down: 'NRC_DMS_CH_DOWN-ONOFF',
   up: 'NRC_UP-ONOFF',
   link: 'NRC_VIERA_LINK-ONOFF',
   volume_down: 'NRC_VOLDOWN-ONOFF',
   volume_up: 'NRC_VOLUP-ONOFF',
   vtools: 'NRC_VTOOLS-ONOFF',
-  yellow: 'NRC_YELLOW-ONOFF'
+  yellow: 'NRC_YELLOW-ONOFF',
+  reclist: 'NRC_RECLIST-ONOFF',
+  drive: 'NRC_DRIVE-ONOFF',
+  data: 'NRC_DATA-ONOFF',
+  bd: 'NRC_BD-ONOFF',
+  vod: 'NRC_VOD-ONOFF',
+  eco: 'NRC_ECO-ONOFF'
 };
 
 module.exports = {VieraKeys, Viera};

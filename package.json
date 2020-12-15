@@ -1,6 +1,6 @@
 {
   "name": "node-panasonic-viera",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "NodeJS class for Panasonic Viera Smart-TVs",
   "author": "Jens Maus <mail@jens-maus.de>",
   "homepage": "https://github.com/jens-maus/node-panasonic-viera",

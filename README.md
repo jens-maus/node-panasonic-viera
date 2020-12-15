@@ -80,6 +80,7 @@ This nodejs package/class uses functionality/Know-How gathered from different th
 * [g30r93g/viera.js](https://github.com/g30r93g/viera.js)
 * [AntonioMeireles/homebridge-vieramatic](https://github.com/AntonioMeireles/homebridge-vieramatic)
 * [fhem/FHEM/70_VIERA.pm](https://github.com/mhop/fhem-mirror/blob/master/fhem/FHEM/70_VIERA.pm)
+* [Panasonic-Viera.lua](https://github.com/ErwanAliasr1/hc2-addons/blob/master/multimedia/TV/Panasonic-Viera.lua)
 
 ## Use-Cases
 The following projects are known to use this nodejs class for query/control UniFi devices:
