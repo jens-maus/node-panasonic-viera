@@ -11,6 +11,7 @@
 //   https://github.com/samuelmatis/viera.js
 //   https://github.com/g30r93g/viera.js
 //   https://github.com/AntonioMeireles/homebridge-vieramatic
+//   https://github.com/mhop/fhem-mirror/blob/master/fhem/FHEM/70_VIERA.pm
 //
 // Copyright (c) 2020-2021 Jens Maus <mail@jens-maus.de>
 //
@@ -63,12 +64,13 @@ class Viera {
       if (ipRegExp.test(ipAddress)) {
         this.private._ipAddress = ipAddress;
 
-        if (typeof (app_id) === 'undefined' || typeof (encryption_key) === 'undefined') {
-          this.private._type = TV_TYPE_NONENCRYPTED;
-        } else {
+        if (typeof (app_id) !== 'undefined' && typeof (encryption_key) !== 'undefined' &&
+            app_id !== '' && encryption_key !== '') {
           this.private._type = TV_TYPE_ENCRYPTED;
           this.private._app_id = app_id;
           this.private._enc_key = encryption_key;
+        } else {
+          this.private._type = TV_TYPE_NONENCRYPTED;
         }
 
         resolve(true);
@@ -111,23 +113,6 @@ class Viera {
   sendKey(command) {
     return new Promise((resolve, reject) => {
       this.private._soap_request(URL_CONTROL_NRC, URN_REMOTE_CONTROL, 'X_SendKey', '<X_KeyEvent>' + command.toUpperCase() + '</X_KeyEvent>')
-        .then(result => {
-          resolve(result);
-        })
-        .catch(error => {
-          reject(error);
-        });
-    });
-  }
-
-  /**
-     * Send a change HDMI input to the TV
-     *
-     * @param {String} hdmiInput Command from codes.txt
-     */
-  sendHDMICommand(hdmiInput) {
-    return new Promise((resolve, reject) => {
-      this.private._soap_request(URL_CONTROL_NRC, URN_REMOTE_CONTROL, 'X_SendKey', '<X_KeyEvent>NRC_HDMI' + (hdmiInput - 1) + '-ONOFF</X_KeyEvent>')
         .then(result => {
           resolve(result);
         })
@@ -528,6 +513,10 @@ const VieraKeys = {
   green: 'NRC_GREEN-ONOFF',
   guide: 'NRC_GUIDE-ONOFF',
   hold: 'NRC_HOLD-ONOFF',
+  hdmi1: 'NRC_HDMI1-ONOFF',
+  hdmi2: 'NRC_HDMI2-ONOFF',
+  hdmi3: 'NRC_HDMI3-ONOFF',
+  hdmi4: 'NRC_HDMI4-ONOFF',
   home: 'NRC_HOME-ONOFF',
   index: 'NRC_INDEX-ONOFF',
   info: 'NRC_INFO-ONOFF',
