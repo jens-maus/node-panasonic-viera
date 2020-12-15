@@ -34,8 +34,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import http from 'http';
-import crypto from 'crypto';
+const http = require('http');
+const crypto = require('crypto');
 
 const URN_RENDERING_CONTROL = 'schemas-upnp-org:service:RenderingControl:1';
 const URN_REMOTE_CONTROL = 'panasonic-com:service:p00NetworkControl:1';
@@ -573,4 +573,4 @@ const VieraKeys = {
   yellow: 'NRC_YELLOW-ONOFF'
 };
 
-export {VieraKeys, Viera};
+module.exports = {VieraKeys, Viera};

@@ -46,7 +46,7 @@ ackward language constructs. The following example should give a brief introduct
 how to use node-panasonic-viera in your own applications:
 
 ```js
-import {VieraKeys, Viera} from 'node-panasonic-viera';
+const {VieraKeys, Viera} = require('node-panasonic-viera');
 
 const viera = new Viera();
 
