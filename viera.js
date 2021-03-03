@@ -244,30 +244,28 @@ class VieraPrivate {
 
       // Encapsulate URN_REMOTE_CONTROL command in an X_EncryptedCommand if we're using encryption
       if (this._type === TV_TYPE_ENCRYPTED && urn === URN_REMOTE_CONTROL &&
-          (action !== 'X_GetEncryptSessionId' && action !== 'X_DisplayPinCode' && action !== 'X_RequestAuth')) {
-        if (typeof (this._session_key) !== 'undefined' &&
+          (action !== 'X_GetEncryptSessionId' && action !== 'X_DisplayPinCode' && action !== 'X_RequestAuth') && typeof (this._session_key) !== 'undefined' &&
             typeof (this._session_iv) !== 'undefined' &&
             typeof (this._session_hmac_key) !== 'undefined' &&
             typeof (this._session_id) !== 'undefined' &&
             typeof (this._session_seq_num) !== 'undefined') {
-          // Flag as encrypted
-          is_encrypted = true;
+        // Flag as encrypted
+        is_encrypted = true;
 
-          // Increment the sequence number
-          this._session_seq_num += 1;
+        // Increment the sequence number
+        this._session_seq_num += 1;
 
-          const command =
+        const command =
                 `<X_SessionId>${this._session_id}</X_SessionId>` +
                 `<X_SequenceNumber>${`00000000${this._session_seq_num}`.slice(-8)}</X_SequenceNumber>` +
                 `<X_OriginalCommand><${body_element}:${action} xmlns:${body_element}="urn:${urn}">${parameters}</${body_element}:${action}></X_OriginalCommand>`;
 
-          const encrypted_command = this._encrypt_soap_payload(command, this._session_key, this._session_iv, this._session_hmac_key);
+        const encrypted_command = this._encrypt_soap_payload(command, this._session_key, this._session_iv, this._session_hmac_key);
 
-          action = 'X_EncryptedCommand';
-          parameters =
+        action = 'X_EncryptedCommand';
+        parameters =
                 `<X_ApplicationId>${this._app_id}</X_ApplicationId>` +
                 `<X_EncInfo>${encrypted_command}</X_EncInfo>`;
-        }
       }
 
       const body = '<?xml version="1.0" encoding="utf-8"?>' +
