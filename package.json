@@ -17,7 +17,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": ">=7.28.0",
+    "eslint": ">=7.32.0",
     "pre-commit": "^1.2.2",
     "xo": "~0.39.1",
     "should": "^13.2.3",
