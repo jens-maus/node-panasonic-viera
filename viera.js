@@ -130,7 +130,7 @@ class Viera {
      */
   sendAppCommand(appID) {
     return new Promise((resolve, reject) => {
-      this.private._soap_request(URL_CONTROL_NRC, URN_REMOTE_CONTROL, 'X_LaunchApp', '<X_AppType>vc_app<X_AppType><X_LaunchKeyword>product_id=' + appID + '</X_LaunchKeyword>')
+      this.private._soap_request(URL_CONTROL_NRC, URN_REMOTE_CONTROL, 'X_LaunchApp', '<X_AppType>vc_app</X_AppType><X_LaunchKeyword>product_id=' + appID + '</X_LaunchKeyword>')
         .then(result => {
           resolve(result);
         })
