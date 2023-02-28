@@ -16,9 +16,7 @@
     "url": "git+https://github.com/jens-maus/node-panasonic-viera.git"
   },
   "devDependencies": {
-    "dot-prop": ">=6.0.0",
     "eslint": ">=7.32.0",
-    "lodash": "^4.17.21",
     "pre-commit": "^1.2.2",
     "xo": "~0.39.1"
   },
